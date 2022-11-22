@@ -18,7 +18,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
   };
 
   return (
-    <div className="flex flex-col w-[220px] p-4 bg-gradient-to-br from-white/10 to-[#282148] backdrop-blur-lg animate-slideup rounded-lg cursor-pointer">
+    <div className="flex flex-col w-[220px] p-4 bg-gradient-to-br from-white/10 to-[#374552] backdrop-blur-lg animate-slideup rounded-lg cursor-pointer">
       <div className="relative w-full h-40 group">
         <div
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${

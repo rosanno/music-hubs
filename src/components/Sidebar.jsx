@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { RiCloseLine } from 'react-icons/ri';
-import { GiMusicalScore } from 'react-icons/gi';
+import { MdOutlineHeadset } from 'react-icons/md';
 
 import { links } from '../assets/constants';
 
@@ -12,7 +12,7 @@ const NavLinks = ({ handleClick }) => (
       <NavLink
         key={item.name}
         to={item.to}
-        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400"
+        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-[#F92253]"
         onClick={() => handleClick && handleClick()}
       >
         <item.icon className="w-6 h-6 mr-2" />
@@ -27,10 +27,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#1D2C3B]">
         <div className="flex flex-col items-center">
-          <GiMusicalScore size={50} className="text-[#f4d366]" />
-          <span className="uppercase text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#926229] to-[#F9F19E]">
+          <MdOutlineHeadset size={30} className="text-gray-400" />
+          <span className="uppercase text-xl font-bold text-gray-400">
             music hubs
           </span>
         </div>
@@ -52,13 +52,13 @@ const Sidebar = () => {
       </div>
 
       <div
-        className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-white/10 to-[#483d8b] backdrop-blur-lg z-20 p-6 md:hidden smooth-transition ${
+        className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl bg-[#1D2C3B] z-20 p-6 md:hidden smooth-transition ${
           mobileMenuOpen ? 'left-0' : '-left-full'
         }`}
       >
         <div className="flex flex-col items-center">
-          <GiMusicalScore size={50} className="text-[#f4d366]" />
-          <span className="uppercase text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#926229] to-[#F9F19E]">
+          <MdOutlineHeadset size={50} className="text-gray-400" />
+          <span className="uppercase text-xl font-bold text-gray-400">
             music hubs
           </span>
         </div>
