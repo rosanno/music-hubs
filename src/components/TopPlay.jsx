@@ -1,18 +1,20 @@
 /* eslint-disable import/no-unresolved */
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 // import { useSelector, useDispatch } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper";
 
-import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
+import "swiper/css";
+import "swiper/css/free-mode";
 
 const TopPlay = () => {
   const { data } = useGetTopChartsQuery();
 
   const topPlays = data?.slice(0, 5);
+
+  // console.log(topPlays[0].artists);
 
   return (
     <div className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-full max-w-full flex flex-col">
@@ -33,10 +35,10 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.slice(0, 5).map((artist) => (
+          {topPlays?.artists?.slice(0, 5).map((artist) => (
             <SwiperSlide
               key={artist?.key}
-              style={{ width: '10%', height: 'auto' }}
+              style={{ width: "10%", height: "auto" }}
               className="shadow-lg rounded-full animate-slideright"
             >
               <Link to={`/artists/${artist?.artists[0].adamid}`}>
